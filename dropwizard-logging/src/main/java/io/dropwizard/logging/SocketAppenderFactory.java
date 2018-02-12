@@ -21,7 +21,7 @@ import javax.validation.constraints.NotNull;
 public class SocketAppenderFactory<E extends DeferredProcessingAware> extends AbstractAppenderFactory<E> {
 
     @NotEmpty
-    private String host;
+    private String host = "localhost";
 
     @PortRange
     private int port = 4560;

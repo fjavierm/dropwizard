@@ -17,7 +17,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class UdpSocketAppenderFactory<E extends DeferredProcessingAware> extends AbstractAppenderFactory<E> {
 
     @NotEmpty
-    private String host;
+    private String host = "localhost";
 
     @PortRange
     private int port = 514;

@@ -16,7 +16,9 @@ public class DropwizardUdpSocketAppender<E extends DeferredProcessingAware> exte
 
     @Override
     public void start() {
-        setOutputStream(new ResilentUdpSocketOutputStream(host, port));
+        final ResilentUdpSocketOutputStream outputStream = new ResilentUdpSocketOutputStream(host, port);
+        outputStream.setContext(context);
+        setOutputStream(outputStream);
         super.start();
     }
 }

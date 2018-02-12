@@ -28,7 +28,9 @@ public class DropwizardSocketAppender<E extends DeferredProcessingAware> extends
     }
 
     protected OutputStream socketOutputStream() {
-        return new ResilentSocketOutputStream(host, port, connectionTimeoutMs, socketFactory);
+        final ResilentSocketOutputStream outputStream = new ResilentSocketOutputStream(host, port, connectionTimeoutMs, socketFactory);
+        outputStream.setContext(context);
+        return outputStream;
     }
 }
 
