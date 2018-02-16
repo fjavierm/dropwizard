@@ -1,6 +1,6 @@
 package io.dropwizard.testing.common;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import io.dropwizard.jersey.DropwizardResourceConfig;
 import io.dropwizard.jersey.jackson.JacksonBinder;
 import io.dropwizard.jersey.validation.HibernateValidationFeature;

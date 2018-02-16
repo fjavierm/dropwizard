@@ -1,9 +1,7 @@
 package io.dropwizard.setup;
 
-import com.codahale.metrics.Histogram;
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.UniformReservoir;
-import com.codahale.metrics.health.HealthCheckRegistry;
+import io.dropwizard.metrics5.*;
+import io.dropwizard.metrics5.health.HealthCheckRegistry;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
@@ -16,6 +14,7 @@ import io.dropwizard.validation.valuehandling.GuavaOptionalValidatedValueUnwrapp
 import io.dropwizard.validation.valuehandling.OptionalDoubleValidatedValueUnwrapper;
 import io.dropwizard.validation.valuehandling.OptionalIntValidatedValueUnwrapper;
 import io.dropwizard.validation.valuehandling.OptionalLongValidatedValueUnwrapper;
+import org.hamcrest.core.Is;
 import org.hibernate.validator.HibernateValidator;
 import org.hibernate.validator.internal.engine.ValidatorFactoryImpl;
 import org.junit.Before;
@@ -23,6 +22,9 @@ import org.junit.Test;
 
 import javax.validation.Validation;
 import javax.validation.ValidatorFactory;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -72,9 +74,21 @@ public class BootstrapTest {
     @Test
     public void comesWithJvmInstrumentation() throws Exception {
         bootstrap.registerMetrics();
-        assertThat(bootstrap.getMetricRegistry().getNames())
-                .contains("jvm.buffers.mapped.capacity", "jvm.threads.count", "jvm.memory.heap.usage",
-                        "jvm.attribute.vendor", "jvm.classloader.loaded", "jvm.filedescriptor");
+        assertThat(areContained(bootstrap.getMetricRegistry().getNames())).isEqualTo(true);
+    }
+
+    private boolean areContained(SortedSet<MetricName> names) {
+        List<String> staticNames = Arrays.asList("jvm.buffers.mapped.capacity", "jvm.threads.count",
+            "jvm.memory.heap.usage", "jvm.attribute.vendor", "jvm.classloader.loaded", "jvm.filedescriptor");
+        List<String> keys = names.stream().map(MetricName::getKey).collect(Collectors.toList());
+
+        for (String staticName : staticNames) {
+            if (!keys.contains(staticName)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     @Test
@@ -88,16 +102,24 @@ public class BootstrapTest {
         final MetricRegistry newRegistry = new MetricRegistry() {
             @Override
             public Histogram histogram(String name) {
-                Histogram existed = (Histogram) getMetrics().get(name);
+                Histogram existed = (Histogram) get(getMetrics(), name);
                 return existed != null ? existed : new Histogram(new UniformReservoir());
             }
         };
         bootstrap.setMetricRegistry(newRegistry);
         bootstrap.registerMetrics();
 
-        assertThat(newRegistry.getNames())
-                .contains("jvm.buffers.mapped.capacity", "jvm.threads.count", "jvm.memory.heap.usage",
-                        "jvm.attribute.vendor", "jvm.classloader.loaded", "jvm.filedescriptor");
+        assertThat(areContained(newRegistry.getNames())).isEqualTo(true);
+    }
+
+    private Metric get(Map<MetricName, Metric> metrics, String name) {
+        for (Map.Entry<MetricName, Metric> entry : metrics.entrySet()) {
+            if (entry.getKey().getKey().equals(name)) {
+                return entry.getValue();
+            }
+        }
+
+        return new Counter(); // 00x00 Not correct object
     }
 
     @Test

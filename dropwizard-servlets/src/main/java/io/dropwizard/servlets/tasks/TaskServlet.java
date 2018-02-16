@@ -1,11 +1,12 @@
 package io.dropwizard.servlets.tasks;
 
-import com.codahale.metrics.Meter;
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.Timer;
-import com.codahale.metrics.annotation.ExceptionMetered;
-import com.codahale.metrics.annotation.Metered;
-import com.codahale.metrics.annotation.Timed;
+import io.dropwizard.metrics5.Meter;
+import io.dropwizard.metrics5.MetricName;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.Timer;
+import io.dropwizard.metrics5.annotation.ExceptionMetered;
+import io.dropwizard.metrics5.annotation.Metered;
+import io.dropwizard.metrics5.annotation.Timed;
 import com.google.common.base.Charsets;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMultimap;
@@ -24,10 +25,11 @@ import java.io.PrintWriter;
 import java.lang.reflect.Method;
 import java.util.Collection;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import static com.codahale.metrics.MetricRegistry.name;
+import static io.dropwizard.metrics5.MetricRegistry.name;
 import static java.util.Objects.requireNonNull;
 
 /**
@@ -64,7 +66,7 @@ public class TaskServlet extends HttpServlet {
 
             if (executeMethod.isAnnotationPresent(Timed.class)) {
                 final Timed annotation = executeMethod.getAnnotation(Timed.class);
-                final String name = chooseName(annotation.name(),
+                final MetricName name = chooseName(annotation.name(),
                         annotation.absolute(),
                         task);
                 taskExecutor = new TimedTask(taskExecutor, metricRegistry.timer(name));
@@ -72,7 +74,7 @@ public class TaskServlet extends HttpServlet {
 
             if (executeMethod.isAnnotationPresent(Metered.class)) {
                 final Metered annotation = executeMethod.getAnnotation(Metered.class);
-                final String name = chooseName(annotation.name(),
+                final MetricName name = chooseName(annotation.name(),
                                         annotation.absolute(),
                                         task);
                 taskExecutor = new MeteredTask(taskExecutor, metricRegistry.meter(name));
@@ -80,7 +82,7 @@ public class TaskServlet extends HttpServlet {
 
             if (executeMethod.isAnnotationPresent(ExceptionMetered.class)) {
                 final ExceptionMetered annotation = executeMethod.getAnnotation(ExceptionMetered.class);
-                final String name = chooseName(annotation.name(),
+                final MetricName name = chooseName(annotation.name(),
                                         annotation.absolute(),
                                         task,
                                         ExceptionMetered.DEFAULT_NAME_SUFFIX);
@@ -153,10 +155,11 @@ public class TaskServlet extends HttpServlet {
         return tasks.values();
     }
 
-    private String chooseName(String explicitName, boolean absolute, Task task, String... suffixes) {
+    private MetricName chooseName(String explicitName, boolean absolute, Task task, String... suffixes) {
         if (explicitName != null && !explicitName.isEmpty()) {
             if (absolute) {
-                return explicitName;
+                MetricName metricName = new MetricName(explicitName, new HashMap<>());
+                return metricName;
             }
             return name(task.getClass(), explicitName);
         }

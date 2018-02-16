@@ -1,9 +1,9 @@
 package io.dropwizard.setup;
 
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.SharedMetricRegistries;
-import com.codahale.metrics.health.HealthCheckRegistry;
-import com.codahale.metrics.health.SharedHealthCheckRegistries;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.SharedMetricRegistries;
+import io.dropwizard.metrics5.health.HealthCheckRegistry;
+import io.dropwizard.metrics5.health.SharedHealthCheckRegistries;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 

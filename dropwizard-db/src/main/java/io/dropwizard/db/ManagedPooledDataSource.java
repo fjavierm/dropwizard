@@ -1,7 +1,7 @@
 package io.dropwizard.db;
 
-import com.codahale.metrics.Gauge;
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.Gauge;
+import io.dropwizard.metrics5.MetricRegistry;
 import org.apache.tomcat.jdbc.pool.ConnectionPool;
 import org.apache.tomcat.jdbc.pool.DataSourceProxy;
 import org.apache.tomcat.jdbc.pool.PoolConfiguration;
@@ -9,7 +9,7 @@ import org.apache.tomcat.jdbc.pool.PoolConfiguration;
 import java.sql.SQLFeatureNotSupportedException;
 import java.util.logging.Logger;
 
-import static com.codahale.metrics.MetricRegistry.name;
+import static io.dropwizard.metrics5.MetricRegistry.name;
 
 /**
  * A {@link ManagedDataSource} which is backed by a Tomcat pooled {@link javax.sql.DataSource}.

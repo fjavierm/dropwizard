@@ -1,6 +1,6 @@
 package io.dropwizard.hibernate;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import io.dropwizard.db.DataSourceFactory;

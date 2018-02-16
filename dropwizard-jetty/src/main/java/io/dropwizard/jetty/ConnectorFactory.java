@@ -1,6 +1,6 @@
 package io.dropwizard.jetty;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import io.dropwizard.jackson.Discoverable;
 import org.eclipse.jetty.server.Connector;

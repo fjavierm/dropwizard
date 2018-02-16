@@ -1,8 +1,8 @@
 package io.dropwizard.auth;
 
-import com.codahale.metrics.Meter;
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.Timer;
+import io.dropwizard.metrics5.Meter;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.Timer;
 import com.google.common.base.Predicate;
 import com.google.common.base.Throwables;
 import com.google.common.cache.CacheBuilder;
@@ -17,7 +17,7 @@ import java.security.Principal;
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
-import static com.codahale.metrics.MetricRegistry.name;
+import static io.dropwizard.metrics5.MetricRegistry.name;
 
 /**
  * An {@link Authenticator} decorator which uses a Guava cache to temporarily cache credentials and

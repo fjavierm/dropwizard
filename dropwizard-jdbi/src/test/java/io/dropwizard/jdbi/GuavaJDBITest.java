@@ -1,7 +1,7 @@
 package io.dropwizard.jdbi;
 
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.health.HealthCheckRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.health.HealthCheckRegistry;
 import com.google.common.base.Optional;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.db.ManagedDataSource;

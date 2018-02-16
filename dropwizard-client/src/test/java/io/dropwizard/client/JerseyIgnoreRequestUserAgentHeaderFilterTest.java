@@ -1,6 +1,6 @@
 package io.dropwizard.client;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import com.google.common.io.Resources;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;

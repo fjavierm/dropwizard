@@ -1,7 +1,7 @@
 package io.dropwizard.server;
 
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.jetty9.InstrumentedQueuedThreadPool;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.jetty9.InstrumentedQueuedThreadPool;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.google.common.base.MoreObjects;

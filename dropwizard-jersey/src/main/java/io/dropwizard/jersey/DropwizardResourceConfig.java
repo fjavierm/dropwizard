@@ -1,7 +1,7 @@
 package io.dropwizard.jersey;
 
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.jersey2.InstrumentedResourceMethodApplicationListener;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.jersey2.InstrumentedResourceMethodApplicationListener;
 import com.fasterxml.classmate.ResolvedType;
 import com.fasterxml.classmate.TypeResolver;
 import com.google.common.annotations.VisibleForTesting;

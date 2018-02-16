@@ -1,6 +1,6 @@
 package io.dropwizard.migrations;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.db.ManagedPooledDataSource;
 import net.jcip.annotations.NotThreadSafe;

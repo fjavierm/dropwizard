@@ -408,7 +408,7 @@ instances from the URI ``/hello-world``, so our resource class looks like this:
     package com.example.helloworld.resources;
 
     import com.example.helloworld.api.Saying;
-    import com.codahale.metrics.annotation.Timed;
+    import io.dropwizard.metrics5.annotation.Timed;
 
     import javax.ws.rs.GET;
     import javax.ws.rs.Path;
@@ -539,7 +539,7 @@ make sure we can actually format the provided template:
 
     package com.example.helloworld.health;
 
-    import com.codahale.metrics.health.HealthCheck;
+    import io.dropwizard.metrics5.health.HealthCheck;
 
     public class TemplateHealthCheck extends HealthCheck {
         private final String template;

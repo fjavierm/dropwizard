@@ -1,6 +1,6 @@
 package com.example.request_log;
 
-import com.codahale.metrics.health.HealthCheck;
+import io.dropwizard.metrics5.health.HealthCheck;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import io.dropwizard.Application;

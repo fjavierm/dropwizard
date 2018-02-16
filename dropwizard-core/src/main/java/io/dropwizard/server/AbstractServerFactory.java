@@ -1,12 +1,12 @@
 package io.dropwizard.server;
 
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.health.HealthCheckRegistry;
-import com.codahale.metrics.jetty9.InstrumentedHandler;
-import com.codahale.metrics.jetty9.InstrumentedQueuedThreadPool;
-import com.codahale.metrics.servlets.AdminServlet;
-import com.codahale.metrics.servlets.HealthCheckServlet;
-import com.codahale.metrics.servlets.MetricsServlet;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.health.HealthCheckRegistry;
+import io.dropwizard.metrics5.jetty9.InstrumentedHandler;
+import io.dropwizard.metrics5.jetty9.InstrumentedQueuedThreadPool;
+import io.dropwizard.metrics5.servlets.AdminServlet;
+import io.dropwizard.metrics5.servlets.HealthCheckServlet;
+import io.dropwizard.metrics5.servlets.MetricsServlet;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;

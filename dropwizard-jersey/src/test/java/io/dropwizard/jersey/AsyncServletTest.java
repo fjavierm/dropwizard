@@ -1,6 +1,6 @@
 package io.dropwizard.jersey;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import io.dropwizard.jersey.dummy.DummyResource;
 import org.junit.Test;
 

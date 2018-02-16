@@ -1,6 +1,6 @@
 package io.dropwizard.auth;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import com.google.common.cache.CacheBuilderSpec;
 import com.google.common.collect.ImmutableSet;
 import org.hamcrest.CoreMatchers;

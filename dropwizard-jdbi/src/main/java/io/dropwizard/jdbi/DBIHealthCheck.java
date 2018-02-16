@@ -1,6 +1,6 @@
 package io.dropwizard.jdbi;
 
-import com.codahale.metrics.health.HealthCheck;
+import io.dropwizard.metrics5.health.HealthCheck;
 import com.google.common.util.concurrent.MoreExecutors;
 import io.dropwizard.db.TimeBoundHealthCheck;
 import io.dropwizard.util.Duration;

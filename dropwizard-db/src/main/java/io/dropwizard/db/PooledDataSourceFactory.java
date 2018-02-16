@@ -1,6 +1,6 @@
 package io.dropwizard.db;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import io.dropwizard.util.Duration;
 
 import java.util.Map;

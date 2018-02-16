@@ -1,6 +1,6 @@
 package io.dropwizard.auth.chained;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import com.google.common.collect.ImmutableList;
 import io.dropwizard.auth.AuthBaseTest;
 import io.dropwizard.auth.AuthDynamicFeature;

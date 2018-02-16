@@ -1,6 +1,6 @@
 package io.dropwizard.metrics;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 /**
  * A factory for configuring the metrics sub-system for the environment.
  * <p/>
- * Configures an optional list of {@link com.codahale.metrics.ScheduledReporter reporters} with a
+ * Configures an optional list of {@link io.dropwizard.metrics5.ScheduledReporter reporters} with a
  * default {@link #frequency}.
  * <p/>
  * <b>Configuration Parameters:</b>
@@ -69,7 +69,7 @@ public class MetricsFactory {
     }
 
     /**
-     * Configures the given lifecycle with the {@link com.codahale.metrics.ScheduledReporter
+     * Configures the given lifecycle with the {@link io.dropwizard.metrics5.ScheduledReporter
      * reporters} configured for the given registry.
      * <p />
      * The reporters are tied in to the given lifecycle, such that their {@link #getFrequency()

@@ -1,7 +1,7 @@
 package io.dropwizard.jdbi3;
 
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.jdbi3.strategies.TimedAnnotationNameStrategy;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.jdbi3.strategies.TimedAnnotationNameStrategy;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;

@@ -8,7 +8,7 @@ import java.util.Locale;
 /**
  * A base {@link ReporterFactory} for configuring metric reporters with formatting options.
  * <p/>
- * Configures formatting options common to some {@link com.codahale.metrics.ScheduledReporter}s.
+ * Configures formatting options common to some {@link io.dropwizard.metrics5.ScheduledReporter}s.
  * <p/>
  * <b>Configuration Parameters:</b>
  * <table>

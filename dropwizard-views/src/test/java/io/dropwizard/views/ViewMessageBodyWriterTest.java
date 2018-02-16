@@ -1,7 +1,8 @@
 package io.dropwizard.views;
 
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.Timer;
+import io.dropwizard.metrics5.MetricName;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.Timer;
 import org.glassfish.jersey.message.internal.HeaderValueException;
 import org.glassfish.jersey.server.ContainerRequest;
 import org.junit.Test;
@@ -44,7 +45,7 @@ public class ViewMessageBodyWriterTest {
         final ViewRenderer nonRenderable = mock(ViewRenderer.class);
         final Locale locale = new Locale("en-US");
 
-        when(metricRegistry.timer(anyString())).thenReturn(timer);
+        when(metricRegistry.timer(any(MetricName.class))).thenReturn(timer);
         when(timer.time()).thenReturn(timerContext);
 
         when(renderable.isRenderable(view)).thenReturn(true);
@@ -68,7 +69,7 @@ public class ViewMessageBodyWriterTest {
     public void writeToShouldThrowWhenNoValidRendererFound() {
         final ViewMessageBodyWriter writer = new ViewMessageBodyWriter(metricRegistry, Collections.emptyList());
 
-        when(metricRegistry.timer(anyString())).thenReturn(timer);
+        when(metricRegistry.timer(any(MetricName.class))).thenReturn(timer);
         when(timer.time()).thenReturn(timerContext);
 
         assertThatExceptionOfType(WebApplicationException.class).isThrownBy(() -> {
@@ -85,7 +86,7 @@ public class ViewMessageBodyWriterTest {
         final Locale locale = new Locale("en-US");
         final ViewRenderException exception = new ViewRenderException("oops");
 
-        when(metricRegistry.timer(anyString())).thenReturn(timer);
+        when(metricRegistry.timer(any(MetricName.class))).thenReturn(timer);
         when(timer.time()).thenReturn(timerContext);
 
         when(renderer.isRenderable(view)).thenReturn(true);

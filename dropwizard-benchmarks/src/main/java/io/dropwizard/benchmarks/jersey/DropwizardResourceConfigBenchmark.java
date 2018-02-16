@@ -1,6 +1,6 @@
 package io.dropwizard.benchmarks.jersey;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import com.google.common.collect.ImmutableList;
 import io.dropwizard.jersey.DropwizardResourceConfig;
 import org.openjdk.jmh.annotations.Benchmark;

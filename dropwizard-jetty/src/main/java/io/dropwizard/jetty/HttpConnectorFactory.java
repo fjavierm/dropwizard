@@ -1,6 +1,7 @@
 package io.dropwizard.jetty;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricName;
+import io.dropwizard.metrics5.MetricRegistry;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.dropwizard.util.Duration;
@@ -30,7 +31,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
-import static com.codahale.metrics.MetricRegistry.name;
+import static io.dropwizard.metrics5.MetricRegistry.name;
 
 /**
  * Builds HTTP connectors.
@@ -544,7 +545,7 @@ public class HttpConnectorFactory implements ConnectorFactory {
     /**
      * Get name of the timer that tracks incoming HTTP connections
      */
-    protected String httpConnections() {
+    protected MetricName httpConnections() {
         return name(HttpConnectionFactory.class,  bindHost, Integer.toString(port), "connections");
     }
 

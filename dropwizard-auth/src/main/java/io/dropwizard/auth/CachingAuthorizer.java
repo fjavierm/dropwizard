@@ -1,8 +1,8 @@
 package io.dropwizard.auth;
 
-import com.codahale.metrics.Meter;
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.Timer;
+import io.dropwizard.metrics5.Meter;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.Timer;
 import com.google.common.base.Throwables;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
@@ -18,7 +18,7 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 import java.security.Principal;
 import java.util.function.Predicate;
 
-import static com.codahale.metrics.MetricRegistry.name;
+import static io.dropwizard.metrics5.MetricRegistry.name;
 
 /**
  * An {@link Authorizer} decorator which uses a Guava {@link Cache} to

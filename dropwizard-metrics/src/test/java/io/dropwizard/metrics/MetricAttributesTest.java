@@ -1,8 +1,8 @@
 package io.dropwizard.metrics;
 
-import com.codahale.metrics.MetricAttribute;
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.ScheduledReporter;
+import io.dropwizard.metrics5.MetricAttribute;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.ScheduledReporter;
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 import org.junit.runner.RunWith;

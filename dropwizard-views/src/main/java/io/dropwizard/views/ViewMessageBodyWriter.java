@@ -1,7 +1,7 @@
 package io.dropwizard.views;
 
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.Timer;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.Timer;
 import com.google.common.annotations.VisibleForTesting;
 import org.glassfish.jersey.message.internal.HeaderValueException;
 
@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.ServiceLoader;
 
-import static com.codahale.metrics.MetricRegistry.name;
+import static io.dropwizard.metrics5.MetricRegistry.name;
 import static java.util.Objects.requireNonNull;
 
 @Provider

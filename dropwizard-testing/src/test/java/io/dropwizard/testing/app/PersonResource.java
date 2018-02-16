@@ -1,6 +1,6 @@
 package io.dropwizard.testing.app;
 
-import com.codahale.metrics.annotation.Timed;
+import io.dropwizard.metrics5.annotation.Timed;
 import com.google.common.collect.ImmutableList;
 import io.dropwizard.jersey.params.IntParam;
 import io.dropwizard.validation.Validated;

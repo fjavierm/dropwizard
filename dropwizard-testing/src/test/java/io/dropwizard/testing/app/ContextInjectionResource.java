@@ -1,6 +1,6 @@
 package io.dropwizard.testing.app;
 
-import com.codahale.metrics.annotation.Timed;
+import io.dropwizard.metrics5.annotation.Timed;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;

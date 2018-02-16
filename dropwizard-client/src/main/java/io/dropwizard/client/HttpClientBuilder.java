@@ -1,10 +1,10 @@
 package io.dropwizard.client;
 
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.httpclient.HttpClientMetricNameStrategies;
-import com.codahale.metrics.httpclient.HttpClientMetricNameStrategy;
-import com.codahale.metrics.httpclient.InstrumentedHttpClientConnectionManager;
-import com.codahale.metrics.httpclient.InstrumentedHttpRequestExecutor;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.httpclient.HttpClientMetricNameStrategies;
+import io.dropwizard.metrics5.httpclient.HttpClientMetricNameStrategy;
+import io.dropwizard.metrics5.httpclient.InstrumentedHttpClientConnectionManager;
+import io.dropwizard.metrics5.httpclient.InstrumentedHttpRequestExecutor;
 import com.google.common.annotations.VisibleForTesting;
 import io.dropwizard.client.proxy.AuthConfiguration;
 import io.dropwizard.client.proxy.NonProxyListProxyRoutePlanner;

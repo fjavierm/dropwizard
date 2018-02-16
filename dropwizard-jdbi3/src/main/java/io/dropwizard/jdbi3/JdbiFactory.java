@@ -1,8 +1,8 @@
 package io.dropwizard.jdbi3;
 
-import com.codahale.metrics.jdbi3.InstrumentedTimingCollector;
-import com.codahale.metrics.jdbi3.strategies.SmartNameStrategy;
-import com.codahale.metrics.jdbi3.strategies.StatementNameStrategy;
+import io.dropwizard.metrics5.jdbi3.InstrumentedTimingCollector;
+import io.dropwizard.metrics5.jdbi3.strategies.SmartNameStrategy;
+import io.dropwizard.metrics5.jdbi3.strategies.StatementNameStrategy;
 import io.dropwizard.db.ManagedDataSource;
 import io.dropwizard.db.PooledDataSourceFactory;
 import io.dropwizard.setup.Environment;

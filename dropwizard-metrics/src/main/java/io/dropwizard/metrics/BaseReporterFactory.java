@@ -1,8 +1,8 @@
 package io.dropwizard.metrics;
 
-import com.codahale.metrics.MetricAttribute;
-import com.codahale.metrics.MetricFilter;
-import com.codahale.metrics.ScheduledReporter;
+import io.dropwizard.metrics5.MetricAttribute;
+import io.dropwizard.metrics5.MetricFilter;
+import io.dropwizard.metrics5.ScheduledReporter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.collect.ImmutableSet;
@@ -236,8 +236,8 @@ public abstract class BaseReporterFactory implements ReporterFactory {
         return (name, metric) -> {
             // Include the metric if its name is not excluded and its name is included
             // Where, by default, with no includes setting, all names are included.
-            return !stringMatchingStrategy.containsMatch(getExcludes(), name) &&
-                    (getIncludes().isEmpty() || stringMatchingStrategy.containsMatch(getIncludes(), name));
+            return !stringMatchingStrategy.containsMatch(getExcludes(), name.getKey()) &&
+                    (getIncludes().isEmpty() || stringMatchingStrategy.containsMatch(getIncludes(), name.getKey()));
         };
     }
 

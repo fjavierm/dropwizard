@@ -1,6 +1,6 @@
 package io.dropwizard.jdbi;
 
-import com.codahale.metrics.health.HealthCheck;
+import io.dropwizard.metrics5.health.HealthCheck;
 import io.dropwizard.util.Duration;
 import org.junit.Test;
 import org.mockito.Mockito;

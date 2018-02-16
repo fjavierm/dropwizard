@@ -1,6 +1,6 @@
 package io.dropwizard.metrics;
 
-import com.codahale.metrics.ScheduledReporter;
+import io.dropwizard.metrics5.ScheduledReporter;
 import io.dropwizard.lifecycle.Managed;
 import io.dropwizard.util.Duration;
 

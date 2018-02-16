@@ -1,6 +1,6 @@
 package io.dropwizard.db;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import org.apache.tomcat.jdbc.pool.PoolProperties;
 import org.junit.Test;
 

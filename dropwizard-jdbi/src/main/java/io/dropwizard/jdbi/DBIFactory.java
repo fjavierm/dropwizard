@@ -2,9 +2,10 @@ package io.dropwizard.jdbi;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
-import com.codahale.metrics.jdbi.InstrumentedTimingCollector;
-import com.codahale.metrics.jdbi.strategies.DelegatingStatementNameStrategy;
-import com.codahale.metrics.jdbi.strategies.NameStrategies;
+import io.dropwizard.metrics5.MetricName;
+import io.dropwizard.metrics5.jdbi.InstrumentedTimingCollector;
+import io.dropwizard.metrics5.jdbi.strategies.DelegatingStatementNameStrategy;
+import io.dropwizard.metrics5.jdbi.strategies.NameStrategies;
 import io.dropwizard.db.ManagedDataSource;
 import io.dropwizard.db.PooledDataSourceFactory;
 import io.dropwizard.jdbi.args.GuavaOptionalArgumentFactory;
@@ -49,7 +50,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Optional;
 import java.util.TimeZone;
 
-import static com.codahale.metrics.MetricRegistry.name;
+import static io.dropwizard.metrics5.MetricRegistry.name;
 
 public class DBIFactory {
 
@@ -58,7 +59,7 @@ public class DBIFactory {
      */
     private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(DBI.class);
 
-    private static final String RAW_SQL = name(DBI.class, "raw-sql");
+    private static final MetricName RAW_SQL = name(DBI.class, "raw-sql");
 
     private static class SanerNamingStrategy extends DelegatingStatementNameStrategy {
         private SanerNamingStrategy() {

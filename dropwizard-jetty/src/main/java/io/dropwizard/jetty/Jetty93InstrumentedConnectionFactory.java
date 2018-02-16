@@ -1,6 +1,6 @@
 package io.dropwizard.jetty;
 
-import com.codahale.metrics.Timer;
+import io.dropwizard.metrics5.Timer;
 import org.eclipse.jetty.io.Connection;
 import org.eclipse.jetty.io.EndPoint;
 import org.eclipse.jetty.server.ConnectionFactory;
@@ -13,7 +13,7 @@ import java.util.List;
 import static java.util.Objects.requireNonNull;
 
 /**
- * A version {@link com.codahale.metrics.jetty9.InstrumentedConnectionFactory}, which supports Jetty 9.3 API.
+ * A version {@link io.dropwizard.metrics5.jetty9.InstrumentedConnectionFactory}, which supports Jetty 9.3 API.
  * NOTE: This class could be replaced, when <strong>dropwizard-metrics-jetty9</strong> will support Jetty 9.3.
  */
 public class Jetty93InstrumentedConnectionFactory extends ContainerLifeCycle implements ConnectionFactory {

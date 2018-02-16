@@ -1,8 +1,8 @@
 package io.dropwizard.client;
 
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.httpclient.HttpClientMetricNameStrategies;
-import com.codahale.metrics.httpclient.HttpClientMetricNameStrategy;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.httpclient.HttpClientMetricNameStrategies;
+import io.dropwizard.metrics5.httpclient.HttpClientMetricNameStrategy;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;

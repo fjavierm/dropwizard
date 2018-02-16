@@ -1,14 +1,17 @@
 package io.dropwizard.metrics;
 
-import com.codahale.metrics.Metric;
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.ScheduledReporter;
+import io.dropwizard.metrics5.Metric;
+import io.dropwizard.metrics5.MetricName;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.ScheduledReporter;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -111,7 +114,8 @@ public class BaseReporterFactoryTest {
 
         factory.setUseRegexFilters(false);
         factory.setUseSubstringMatching(false);
-        assertThat(factory.getFilter().matches(name, metric))
+        MetricName metricName = new MetricName(name, new HashMap<>());
+        assertThat(factory.getFilter().matches(metricName, metric))
                 .overridingErrorMessage(msg + ": expected 'matches(%s)=%s' for default matcher", name, expectedDefaultResult)
                 .isEqualTo(expectedDefaultResult);
     }
@@ -123,7 +127,8 @@ public class BaseReporterFactoryTest {
 
         factory.setUseRegexFilters(true);
         factory.setUseSubstringMatching(false);
-        assertThat(factory.getFilter().matches(name, metric))
+        MetricName metricName = new MetricName(name, new HashMap<>());
+        assertThat(factory.getFilter().matches(metricName, metric))
                 .overridingErrorMessage(msg + ": expected 'matches(%s)=%s' for regex matcher", name, expectedRegexResult)
                 .isEqualTo(expectedRegexResult);
     }
@@ -135,7 +140,8 @@ public class BaseReporterFactoryTest {
 
         factory.setUseRegexFilters(false);
         factory.setUseSubstringMatching(true);
-        assertThat(factory.getFilter().matches(name, metric))
+        MetricName metricName = new MetricName(name, new HashMap<>());
+        assertThat(factory.getFilter().matches(metricName, metric))
             .overridingErrorMessage(msg + ": expected 'matches(%s)=%s' for substring matcher", name, expectedSubstringResult)
             .isEqualTo(expectedSubstringResult);
     }

@@ -1,6 +1,6 @@
 package io.dropwizard.db;
 
-import com.codahale.metrics.health.HealthCheck;
+import io.dropwizard.metrics5.health.HealthCheck;
 import io.dropwizard.util.Duration;
 import org.junit.Test;
 

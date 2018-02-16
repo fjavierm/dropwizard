@@ -1,15 +1,15 @@
 package io.dropwizard.setup;
 
-import com.codahale.metrics.jmx.JmxReporter;
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.health.HealthCheckRegistry;
-import com.codahale.metrics.jvm.BufferPoolMetricSet;
-import com.codahale.metrics.jvm.ClassLoadingGaugeSet;
-import com.codahale.metrics.jvm.FileDescriptorRatioGauge;
-import com.codahale.metrics.jvm.JvmAttributeGaugeSet;
-import com.codahale.metrics.jvm.GarbageCollectorMetricSet;
-import com.codahale.metrics.jvm.MemoryUsageGaugeSet;
-import com.codahale.metrics.jvm.ThreadStatesGaugeSet;
+import io.dropwizard.metrics5.jmx.JmxReporter;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.health.HealthCheckRegistry;
+import io.dropwizard.metrics5.jvm.BufferPoolMetricSet;
+import io.dropwizard.metrics5.jvm.ClassLoadingGaugeSet;
+import io.dropwizard.metrics5.jvm.FileDescriptorRatioGauge;
+import io.dropwizard.metrics5.jvm.JvmAttributeGaugeSet;
+import io.dropwizard.metrics5.jvm.GarbageCollectorMetricSet;
+import io.dropwizard.metrics5.jvm.MemoryUsageGaugeSet;
+import io.dropwizard.metrics5.jvm.ThreadStatesGaugeSet;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableList;
 import io.dropwizard.Application;

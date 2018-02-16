@@ -1,6 +1,6 @@
 package io.dropwizard.jdbi3;
 
-import com.codahale.metrics.annotation.Timed;
+import io.dropwizard.metrics5.annotation.Timed;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import org.jdbi.v3.sqlobject.customizer.Bind;

@@ -1,6 +1,6 @@
 package io.dropwizard.migrations;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import io.dropwizard.Configuration;
 import io.dropwizard.cli.ConfiguredCommand;
 import io.dropwizard.db.DatabaseConfiguration;

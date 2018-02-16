@@ -1,6 +1,6 @@
 package io.dropwizard.hibernate;
 
-import com.codahale.metrics.health.HealthCheckRegistry;
+import io.dropwizard.metrics5.health.HealthCheckRegistry;
 import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;

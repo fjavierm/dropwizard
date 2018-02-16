@@ -1,6 +1,6 @@
 package io.dropwizard.metrics;
 
-import com.codahale.metrics.MetricAttribute;
+import io.dropwizard.metrics5.MetricAttribute;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.io.Resources;
 import io.dropwizard.configuration.YamlConfigurationFactory;

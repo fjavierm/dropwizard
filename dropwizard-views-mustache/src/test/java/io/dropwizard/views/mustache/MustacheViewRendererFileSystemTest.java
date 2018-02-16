@@ -1,6 +1,6 @@
 package io.dropwizard.views.mustache;
 
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import io.dropwizard.logging.BootstrapLogging;
@@ -25,7 +25,7 @@ import static org.assertj.core.api.Assertions.failBecauseExceptionWasNotThrown;
 /**
  * Test class for {@link MustacheViewRenderer} configured to load Mustache
  * templates from the file system.
- * 
+ *
  * @since 1.1.0
  */
 public class MustacheViewRendererFileSystemTest extends JerseyTest {

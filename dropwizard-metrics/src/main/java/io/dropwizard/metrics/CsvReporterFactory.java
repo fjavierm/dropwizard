@@ -1,8 +1,8 @@
 package io.dropwizard.metrics;
 
-import com.codahale.metrics.CsvReporter;
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.ScheduledReporter;
+import io.dropwizard.metrics5.CsvReporter;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.ScheduledReporter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -68,6 +68,6 @@ public class CsvReporterFactory extends BaseFormattedReporterFactory {
                           .convertRatesTo(getRateUnit())
                           .filter(getFilter())
                           .formatFor(getLocale())
-                          .build(getFile());
+                          .build(file);
     }
 }

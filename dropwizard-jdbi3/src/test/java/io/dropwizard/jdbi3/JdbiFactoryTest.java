@@ -1,8 +1,8 @@
 package io.dropwizard.jdbi3;
 
-import com.codahale.metrics.MetricRegistry;
-import com.codahale.metrics.health.HealthCheckRegistry;
-import com.codahale.metrics.jdbi3.InstrumentedTimingCollector;
+import io.dropwizard.metrics5.MetricRegistry;
+import io.dropwizard.metrics5.health.HealthCheckRegistry;
+import io.dropwizard.metrics5.jdbi3.InstrumentedTimingCollector;
 import io.dropwizard.db.ManagedDataSource;
 import io.dropwizard.db.PooledDataSourceFactory;
 import io.dropwizard.lifecycle.setup.LifecycleEnvironment;

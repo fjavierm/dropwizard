@@ -3,7 +3,7 @@ package io.dropwizard.logging;
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.util.StatusPrinter;
-import com.codahale.metrics.MetricRegistry;
+import io.dropwizard.metrics5.MetricRegistry;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
